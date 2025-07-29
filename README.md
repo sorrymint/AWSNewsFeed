@@ -49,7 +49,7 @@ What your bucket should look like.
 5. Only add one element at a time.
 6. NOT THE WHOLE ARRAY.
 7. Make sure to change the URL to match the one from your S3 bucket.
-8. Repeat this for each event.
+8. Repeat this for each event YOU SHOULD HAVE THREE IN TOTAL.
 9. Take a screenshot of your DB.
 
 ![add Data](./instructions/addingData.webp)
@@ -73,7 +73,7 @@ import boto3
 
 def lambda_handler(event, context):
     dynamodb = boto3.client('dynamodb')
-    table_name = 'luke-newsfeed-db-2738291738'  # **IMPORTANT: Replace with your actual DynamoDB table name**
+    table_name = 'your-table-name-here'  # **IMPORTANT: Replace with your actual DynamoDB table name**
 
     try:
         response = dynamodb.scan(
@@ -142,7 +142,11 @@ Take a screenshot of your working local website.
 npm install
 npm run dev
 ```
-> You will need to insert **YOUR OWN** API URL in the [Home Page](src/routes/+page.svelte) around line 18.
+> ⚠️ You will need to insert **YOUR OWN** API URL in the [Home Page](src/routes/+page.svelte) around line 18.
+
+This is what the website would look like but with a third event. 
+
+![Finished Site](./instructions/finishedWebsite.webp)
 
 ## What to turn In
 
