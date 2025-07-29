@@ -4,26 +4,6 @@ This project I have given you a simple website front end to show students upcomi
 What you need to do is build the cloud infrastructure to make it work.
 These instructions will not go in deep detail on each AWS product used because it should all be review.
 
-## Clone this Repo 
-
-To get a copy of this code on your own machine please clone down this repo.
-
-```bash
-git clone https://github.com/sorrymint/AWSNewsFeed.git
-```
-
-## Run It
-
-To get the frond end website running **LOCALLY** make sure you have [node.js](https://nodejs.org/en/download) installed. 
-Then run the following commands.
-Then see the app running in your browser.
-The project will not fully work until you finish your AWS infrastructure.
-
-```bash
-npm install
-npm run dev
-```
-
 ## S3
 
 1. Make a S3 Bucket called `yourname-club-news-feed-randomnumbers`. 
@@ -35,6 +15,7 @@ npm run dev
    - `game-night.jpg`
    - `bytejam.jpg`
 6. Update the bucket policy.
+7. Take a screenshot of your bucket.
 
 ```yaml
 {
@@ -69,6 +50,7 @@ What your bucket should look like.
 6. NOT THE WHOLE ARRAY.
 7. Make sure to change the URL to match the one from your S3 bucket.
 8. Repeat this for each event.
+9. Take a screenshot of your DB.
 
 ![add Data](./instructions/addingData.webp)
 
@@ -84,7 +66,7 @@ What your bucket should look like.
 ![attachPolicy](./instructions/attachPolicie.webp)
 7. Add the `AmazonDynamoDBReadOnlyAccess` policy. After it should look something like this
 ![After New Policy Added](./instructions/newPolicy.webp)
-8. Add the following code to your Lambda function (Might need to fix formating).
+8. Add the following code to your Lambda function (Might need to fix formating). Make sure to change the `table_name`.
 ```python
 import json
 import boto3
@@ -111,7 +93,7 @@ def lambda_handler(event, context):
             'statusCode': 200,
             'headers': {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*', # Allows all origins, adjust for production
+                'Access-Control-Allow-Origin': '*',
                 'Access-Control-Allow-Methods': 'GET, OPTIONS',
                 'Access-Control-Allow-Headers': 'Content-Type, X-Amz-Date, Authorization, X-Api-Key, X-Amz-Security-Token'
             },
@@ -138,11 +120,35 @@ def lambda_handler(event, context):
 ![End Point](./instructions/EndPoint.webp)
 4. You should see JSON in your browser.
 ![JSON Output](./instructions/output.webp)
+5. Take a screenshot of your Lambda function including your API Gateway.
 
 ## Connecting Front End
 
+To get a copy of this code on your own machine please clone down this repo.
 
+```bash
+git clone https://github.com/sorrymint/AWSNewsFeed.git
+```
+
+## Run It
+
+To get the frond end website running **LOCALLY** make sure you have [node.js](https://nodejs.org/en/download) installed.
+Then run the following commands.
+Then see the app running in your browser.
+The project will not fully work until you finish your AWS infrastructure.
+Take a screenshot of your working local website.
+
+```bash
+npm install
+npm run dev
+```
+> You will need to insert **YOUR OWN** API URL in the [Home Page](src/routes/+page.svelte) around line 18.
 
 ## What to turn In
 
-
+- Screenshot of S3 Bucket with three images.
+- Screenshot of DynamoDB with three items. 
+- Screenshot of Lambda Function Dashboard showing that you have the gateway.
+- Screenshot of Front End website running locally displaying data.
+- Must go back and delete all **your** cloud infrastructure to get full credit.
+- Write a paragraph (3-5 full sentences) **OR** detailed digram explaining the dataflow from Cloud -> Web. Make sure to touch on all parts of your cloud infrastructure.
