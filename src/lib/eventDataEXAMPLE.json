@@ -1,0 +1,23 @@
+[
+  {
+    "eventKey": {"S": "picnic"},
+    "event-name": {"S": "Club Picnic"},
+    "date": {"S": "10-20-2024"},
+    "slug": {"S": "picnic"},
+    "location": {"S": "Field by Oak"},
+    "description": {"S": "At the beginning of each school year the Computer Software Development club hosts a picnic. Club members are invited to share food and get to know each other"},
+    "image": {"S": "S3 URL HERE"}
+  },
+  {
+    "eventKey": {"S": "game-night"},
+    "event-name": {"S": "Game Night"},
+    "slug": {"S": "game-night"},
+    "date": {"S": "11-20-2024"},
+    "location": {"S": "Room 200 ATC"},
+    "description": {"S": "Programming classes can be stressful. Come relax at our monthly game night. Bring your gaming hardware and get ready for some a classic LAN party."},
+    "image": {"S": "S3 URL HERE"}
+  },
+  {
+    "add-bytejam": "yes you go add bytejam here"
+  }
+]
