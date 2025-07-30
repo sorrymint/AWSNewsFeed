@@ -3,20 +3,16 @@
 This project I have given you a simple website front end to show students upcoming club events.
 What you need to do is build the cloud infrastructure to make it work.
 These instructions will not go in deep detail on each AWS product used because it should all be review.
-You will need to use the `CloudDevOpsStudent` role to complete this assignment. 
+You will need to use the `CloudDevOpsStudent` role to complete this assignment.
 
 ## S3
 
 1. Make a S3 Bucket called `yourname-club-news-feed-randomnumbers`.
 2. Replace your name and replace `randomnumbers` with some random numbers.
 3. Make this S3 Bucket Public.
-4. Upload three pictures from the internet (featuring college students at an event).
-5. Rename the photos to match the following **EXACTLY** (you might need to convert file types).
-    - `picnic.jpg`
-    - `game-night.jpg`
-    - `bytejam.jpg`
-6. Update the bucket policy.
-7. Take a screenshot of your bucket.
+4. Upload three pictures from the internet. Any three photos will.
+5. Update the bucket policy. Replace `Bucket-Name` with the name of your S3 Bucket.
+6. Take a screenshot of your bucket with your images.
 
 ```yaml
 {
@@ -51,7 +47,7 @@ What your bucket should look like.
 6. NOT THE WHOLE ARRAY.
 7. Make sure to change the URL to match the one from your S3 bucket.
 8. Repeat this for each event YOU SHOULD HAVE THREE IN TOTAL.
-9. Take a screenshot of your DB.
+9. Take a screenshot of your DB showing off your data.
 
 ![add Data](./instructions/addingData.webp)
 
@@ -61,13 +57,13 @@ What your bucket should look like.
 2. For RunTime choice Python 3.13.
 3. Click "Create Function".
 4. Now in your new function edit the permission so it can read your DynamoDB. We will be Using IAM for this.
-5. Access the IAM Role.
-   ![AccessIAM](./instructions/getToIAM.webp)
-6. Add a new policy to our Lambda Function.
-   ![attachPolicy](./instructions/attachPolicie.webp)
-7. Add the `AmazonDynamoDBReadOnlyAccess` policy. After it should look something like this
-   ![After New Policy Added](./instructions/newPolicy.webp)
-8. Add the following code to your Lambda function (Might need to fix formating). Make sure to change the `table_name`.
+    - Access the IAM Role.
+      ![AccessIAM](./instructions/getToIAM.webp)
+    - Add a new policy to our Lambda Function.
+      ![attachPolicy](./instructions/attachPolicie.webp)
+    - Add the `AmazonDynamoDBReadOnlyAccess` policy. After it should look something like this
+      ![After New Policy Added](./instructions/newPolicy.webp)
+5. Add the following code to your Lambda function (Might need to fix formating). Make sure to change the `table_name`.
 
 ```python
 import json
