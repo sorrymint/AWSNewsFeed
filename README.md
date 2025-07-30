@@ -3,6 +3,7 @@
 This project I have given you a simple website front end to show students upcoming club events.
 What you need to do is build the cloud infrastructure to make it work.
 These instructions will not go in deep detail on each AWS product used because it should all be review.
+You will need to use the `CloudDevOpsStudent` role to complete this assignment. 
 
 ## S3
 
@@ -125,7 +126,7 @@ def lambda_handler(event, context):
 
 ## Connecting Front End
 
-To get a copy of this code on your own machine please clone down this repo.
+To get a copy the front end website code on your own machine please clone down this repo.
 
 ```bash
 git clone https://github.com/sorrymint/AWSNewsFeed.git
