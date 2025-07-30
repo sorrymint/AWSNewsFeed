@@ -63,7 +63,9 @@ What your bucket should look like.
       ![attachPolicy](./instructions/attachPolicie.webp)
     - Add the `AmazonDynamoDBReadOnlyAccess` policy. After it should look something like this
       ![After New Policy Added](./instructions/newPolicy.webp)
-5. Add the following code to your Lambda function (Might need to fix formating). Make sure to change the `table_name`.
+5. Add the code below to your Lambda function (Might need to fix formating). Make sure to change the value of `table_name`.
+6. Click the Deploy button. Then run a test. 
+   - ![Deploy](./instructions/deploy.webp)
 
 ```python
 import json
