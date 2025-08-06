@@ -63,9 +63,10 @@ What your bucket should look like.
       ![attachPolicy](./instructions/attachPolicie.webp)
     - Add the `AmazonDynamoDBReadOnlyAccess` policy. After it should look something like this
       ![After New Policy Added](./instructions/newPolicy.webp)
-5. Add the code below to your Lambda function (Might need to fix formating). Make sure to change the value of `table_name`.
-6. Click the Deploy button. Then run a test. 
-   - ![Deploy](./instructions/deploy.webp)
+5. Add the code below to your Lambda function (Might need to fix formating). Make sure to change the value of
+   `table_name` to your DynamoDB table name.
+6. Click the Deploy button. Then run a test.
+    - ![Deploy](./instructions/deploy.webp)
 
 ```python
 import json
@@ -116,7 +117,7 @@ def lambda_handler(event, context):
 1. In the Lambda Function Dashboard click add a "Trigger".
 2. Create a new REST API with open security.
    ![Add Trigger](./instructions/addTrigger.webp)
-3. Test out your new API using the API endpoint.
+3. Test out your new API using the API endpoint by clicking the link. 
    ![End Point](./instructions/EndPoint.webp)
 4. You should see JSON in your browser.
    ![JSON Output](./instructions/output.webp)
@@ -125,6 +126,8 @@ def lambda_handler(event, context):
 ## Connecting Front End
 
 To get a copy the front end website code on your own machine please clone down this repo.
+Make sure you are in the write folder when using the terminal (i.e. user/documents/cloud/).
+Open your terminal and clone down the repo with the following command. 
 
 ```bash
 git clone https://github.com/sorrymint/AWSNewsFeed.git
